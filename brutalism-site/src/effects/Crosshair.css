@@ -1,0 +1,43 @@
+.crosshair {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.crosshair__h,
+.crosshair__v {
+  position: fixed;
+  background: rgba(129, 1, 0, 0.18);
+  pointer-events: none;
+}
+
+.crosshair__h {
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: 50%;
+}
+
+.crosshair__v {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  left: 50%;
+}
+
+.crosshair__dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--color-cherry-red);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .crosshair {
+    display: none;
+  }
+}

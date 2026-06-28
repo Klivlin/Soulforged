@@ -1,0 +1,167 @@
+.cases {
+  background: var(--color-black);
+  position: relative;
+}
+
+.cases__header {
+  margin-bottom: 4rem;
+}
+
+.cases__title {
+  color: var(--color-cotton);
+}
+
+.cases__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+}
+
+.case-card {
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-black);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.case-card:hover {
+  border-color: var(--color-cherry-red);
+  transform: translateY(-6px);
+}
+
+.case-card:hover .case-card__scan-overlay {
+  animation: case-scan 1.2s ease-out;
+}
+
+.case-card:hover .case-card__preview-text {
+  opacity: 0.2;
+  letter-spacing: 0.15em;
+}
+
+.case-card__preview {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: var(--color-maroon);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-card__grid-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(237, 232, 221, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 232, 221, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.case-card__preview-text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-cotton);
+  opacity: 0.12;
+  transition: opacity 0.4s, letter-spacing 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.case-card__scan-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(129, 1, 0, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateY(-100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.case-card__barcode {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+@keyframes case-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.case-card__content {
+  padding: 2rem;
+}
+
+.case-card__meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-cherry-red);
+  margin-bottom: 1rem;
+}
+
+.case-card__id {
+  margin-left: auto;
+  opacity: 0.5;
+  color: var(--color-cotton);
+}
+
+.case-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-cotton);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.case-card__role {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-cotton);
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.case-card__summary {
+  font-size: var(--text-md);
+  color: var(--color-cotton);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.case-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stack-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-cotton);
+  border: 1px solid var(--color-line-soft);
+  padding: 0.25rem 0.75rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.case-card:hover .stack-tag {
+  border-color: rgba(129, 1, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .cases__grid {
+    grid-template-columns: 1fr;
+  }
+}

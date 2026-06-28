@@ -1,0 +1,11 @@
+.barcode {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.barcode span {
+  background: var(--color-cotton);
+  height: 100%;
+  flex-shrink: 0;
+}

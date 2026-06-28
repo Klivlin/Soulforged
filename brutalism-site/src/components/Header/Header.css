@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--space-gutter);
+  gap: 2rem;
+  position: relative;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-md);
+  color: var(--color-cotton);
+}
+
+.header__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-cotton);
+  opacity: 0.7;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-cherry-red);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.header__nav {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.header__nav button {
+  color: var(--color-cotton);
+  opacity: 0.7;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.header__nav button:hover {
+  opacity: 1;
+  color: var(--color-cherry-red);
+}
+
+.header__nav button::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-cherry-red);
+  transition: width 0.3s;
+}
+
+.header__nav button:hover::after {
+  width: 100%;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-cotton);
+  opacity: 0.7;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-line-soft);
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  opacity: 1;
+  border-color: var(--color-cherry-red);
+}
+
+.cta-btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  background: var(--color-cotton);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-cotton);
+  transition: all 0.2s;
+  font-weight: 700;
+}
+
+.cta-btn:hover {
+  background: var(--color-cherry-red);
+  border-color: var(--color-cherry-red);
+  color: var(--color-cotton);
+}
+
+.header__barcode {
+  position: absolute;
+  right: var(--space-gutter);
+  bottom: -20px;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__status {
+    display: none;
+  }
+
+  .header__barcode {
+    display: none;
+  }
+}
