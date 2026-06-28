@@ -1,0 +1,34 @@
+:root {
+  /* Color System */
+  --color-cotton: #ede8dd;
+  --color-cherry-red: #810100;
+  --color-maroon: #630000;
+  --color-noir-black: #181717;
+
+  --color-white: #f7f3ea;
+  --color-black: #050505;
+  --color-line: rgba(237, 232, 221, 0.72);
+  --color-line-soft: rgba(237, 232, 221, 0.22);
+  --color-red-glow: rgba(129, 1, 0, 0.72);
+
+  /* Typography */
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --text-xs: 0.72rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-hero: clamp(4rem, 12vw, 11rem);
+
+  /* Spacing */
+  --space-section: clamp(5rem, 12vh, 10rem);
+  --space-gutter: clamp(16px, 3vw, 48px);
+  --gap-grid: 24px;
+
+  /* Animation */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

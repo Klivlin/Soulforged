@@ -1,0 +1,29 @@
+.lottie-player,
+.lottie-player-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  background: transparent;
+  overflow: visible;
+}
+
+.lottie-player svg,
+.lottie-player > div {
+  background: transparent !important;
+  display: block;
+}
+
+.lottie-player--vivid {
+  box-shadow: 0 0 16px rgba(129, 1, 0, 0.45);
+  border-radius: 50%;
+}
+
+.lottie-player-fallback__dot {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: var(--color-cherry-red);
+  opacity: 0.5;
+}
